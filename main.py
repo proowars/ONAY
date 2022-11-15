@@ -34,7 +34,7 @@ draw.text(
 
 text_position2 = (138, 880)
 fontsize2 = 23
-timee = datetime.now(tzinfo= "UTC+2").strftime("%d/%m %H:%M")
+timee = datetime.now().strftime("%d/%m %H:%M")
 draw2 = ImageDraw.Draw(img)
 draw2.rectangle((138, 880, 400, 905), fill="#f0f1f3")
 font2 = ImageFont.truetype('font.ttf', fontsize2)
