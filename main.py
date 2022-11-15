@@ -1,7 +1,10 @@
-import telebot, locale
+import locale
 from datetime import datetime
-from PIL import ImageFont, ImageDraw, Image
+
+import telebot
+from PIL import Image, ImageDraw, ImageFont
 from telebot import types
+
 locale.setlocale(locale.LC_ALL, "")
 
 
@@ -65,6 +68,10 @@ def start(message):
   bot.send_message(message.chat.id, "Введите код:" )
   bot.register_next_step_handler(message, bus)
 
+
+  draw5 = ImageDraw.Draw(img)
+  draw5.rectangle((101, 909, 300, 935), fill="#f0f1f3")
+
 def bus(message):
   global kods
   fontsize1 = 25
@@ -80,7 +87,7 @@ def bus(message):
       text_color,
       font1
       )
-  img.save('TESTTT.jpg')
+
   bot.send_message(message.chat.id, "Введите номер автобуса:")
   bot.register_next_step_handler(message, kod)
 
@@ -97,7 +104,7 @@ def kod(message):
   num = ImageDraw.Draw(img)
   num.text(
       text_position3,
-      busik,
+      busik+", #3023,80Т" ,
       text_color,
       font3
   )
